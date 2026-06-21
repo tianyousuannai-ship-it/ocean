@@ -1,0 +1,162 @@
+.findit-page {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background-attachment: fixed;
+}
+
+.findit-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.score-badge {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #e17055;
+  background: rgba(255,255,255,0.8);
+  padding: 0.3rem 0.7rem;
+  border-radius: 10px;
+}
+
+/* 题目区域 */
+.question-area {
+  text-align: center;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.question-hint {
+  font-size: 1rem;
+  color: #636e72;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.question-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: rgba(255,255,255,0.9);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.question-box:active {
+  transform: scale(0.95);
+}
+
+.question-icon {
+  font-size: 2rem;
+}
+
+.question-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d3436;
+}
+
+.correct-word {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #00b894;
+  animation: pop 0.4s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.5); opacity: 0; }
+  70% { transform: scale(1.15); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.encourage-msg {
+  margin-top: 0.75rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #e17055;
+  animation: slideUp 0.3s ease;
+}
+
+/* 选项网格 */
+.options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  max-width: 450px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.option-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 1rem 0.5rem;
+  border: 3px solid transparent;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.2s, background 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.option-card:active:not(:disabled) {
+  transform: scale(0.93);
+}
+
+.option-card.correct {
+  border-color: #00b894;
+  background: rgba(0, 184, 148, 0.12);
+  animation: pop 0.3s ease;
+}
+
+.option-card.highlight-correct {
+  border-color: #00b894;
+  background: rgba(0, 184, 148, 0.08);
+}
+
+.opt-emoji {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.opt-en {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2d3436;
+}
+
+/* 正确进度条 */
+.accuracy-bar {
+  width: 100%;
+  max-width: 450px;
+  margin: 1.5rem auto 0.3rem;
+  height: 6px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.accuracy-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00b894, #00cec9);
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+
+.accuracy-label {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #636e72;
+  font-weight: 500;
+  margin: 0;
+}
